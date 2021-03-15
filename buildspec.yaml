@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - cd ${CODEBUILD_SRC_DIR}
+      - npm install
+      - npm test
+artifacts:
+  type: s3
+  packaging: zip
+  files:
+    - 'index.js'
+  name: rqe-gateway.zip
