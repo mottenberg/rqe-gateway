@@ -7,9 +7,3 @@ phases:
     commands:
       - cd ${CODEBUILD_SRC_DIR}
       - npm install
-artifacts:
-  type: s3
-  packaging: zip
-  files:
-    - 'index.js'
-  name: rqe-gateway.zip
