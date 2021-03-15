@@ -7,7 +7,6 @@ phases:
     commands:
       - cd ${CODEBUILD_SRC_DIR}
       - npm install
-      - npm test
 artifacts:
   type: s3
   packaging: zip
