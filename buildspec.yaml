@@ -8,11 +8,12 @@ phases:
       - wget -nv https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip
       - unzip terraform_0.14.7_linux_amd64.zip
       - mv terraform /usr/local/bin/
+  pre_build:
+    commands:
+      - terraform init
   build:
     commands:
-      - cd ${CODEBUILD_SRC_DIR}
-      - terraform init
-      - terraform apply -auto-approve
+      - terraform $TF_COMMAND -auto-approve
 artifacts:
   files:
     - '**/*'
