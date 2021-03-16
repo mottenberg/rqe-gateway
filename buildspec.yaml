@@ -13,7 +13,8 @@ phases:
       - terraform init
   build:
     commands:
-      - terraform $TF_COMMAND -auto-approve
+      - terraform plan
+      - terraform apply -auto-approve
 artifacts:
   files:
     - '**/*'
