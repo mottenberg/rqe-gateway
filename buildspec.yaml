@@ -4,8 +4,13 @@ phases:
   install:
     runtime-versions:
       nodejs: 12
+    command: 
+      - wget -nv https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip
+      - unzip terraform_0.14.7_linux_amd64.zip
+      - mv terraform /usr/local/bin/
   build:
     commands:
+      - terraform init
       - terraform apply -auto-approve
 artifacts:
   files:
