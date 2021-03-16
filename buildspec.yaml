@@ -5,9 +5,10 @@ phases:
     runtime-versions:
       nodejs: 12
     command: 
-      - wget -nv https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip
-      - unzip terraform_0.14.7_linux_amd64.zip
-      - mv terraform_0.11.11_linux_amd64 /usr/local/bin/
+      # install terraform binary
+      - curl -s -qL -o terraform_install.zip https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip
+      - unzip terraform_install.zip -d /usr/bin/
+      - chmod +x /usr/bin/terraform
   build:
     commands:
       - cd ${CODEBUILD_SRC_DIR}
