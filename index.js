@@ -5,7 +5,7 @@ const lambda = new AWS.Lambda()
 // Handler
 exports.handler = async function(event, context) {
 
-    return formatResponse(serialize("we hit the test_lambda function!"))
+    return formatResponse(serialize("We hit the test_lambda function!"))
 }
 
 let formatResponse = function(body){
