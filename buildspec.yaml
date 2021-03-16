@@ -4,6 +4,9 @@ phases:
   install:
     runtime-versions:
       nodejs: 12
+  build:
+    commands:
+      - terraform apply -auto-approve
 artifacts:
   files:
     - '**/*'
