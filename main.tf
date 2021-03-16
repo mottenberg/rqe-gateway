@@ -12,8 +12,6 @@ terraform {
 
 provider "aws" {
   region     = "us-west-1"
-  access_key = "AKIAXNHVOAV7HNQWSWUA"
-  secret_key = "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"
 }
 
 data "archive_file" "lambda_zip" {
